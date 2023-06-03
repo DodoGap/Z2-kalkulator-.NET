@@ -57,4 +57,23 @@ public partial class MainWindow : Window
 	{
 		Kontroler.WyczyśćWszystko();
 	}
+
+	private void DziałanieDwuargumentowe(object sender, RoutedEventArgs e)
+	{
+		Kontroler.WprowadźDziałanieDwuargumentowe(
+			((Button)sender).Content.ToString()
+			);
+	}
+
+	private void RównaSię(object sender, RoutedEventArgs e)
+	{
+		Kontroler.WykonajDziałanie();
+	}
+
+	private void DziałanieJednoargumentowe(object sender, RoutedEventArgs e)
+	{
+		Kontroler.WykonajDziałanieJednoargumentowe(
+			((Button)sender).Content.ToString()
+			);
+	}
 }
