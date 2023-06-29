@@ -44,7 +44,7 @@
             />
 
         <Button
-            Grid.Row="2"
+            Grid.Row="2" Click="DziałanieDwuargumentowe"
             >%</Button>
         <Button
             Grid.Column="1"
@@ -66,15 +66,15 @@
             >1/x</Button>
         <Button
             Grid.Column="1"
-            Grid.Row="3"
+            Grid.Row="3" Click="DziałanieDwuargumentowe"
             >xʸ</Button>
         <Button
             Grid.Column="2"
-            Grid.Row="3"
+            Grid.Row="3" Click="DziałanieJednoargumentowe"
             >√</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="3"
+            Grid.Row="3" Click="DziałanieDwuargumentowe"
             >÷</Button>
 
         <Button
@@ -96,8 +96,8 @@
             >9</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="4"
-            >×</Button>
+            Grid.Row="4" Click="DziałanieDwuargumentowe"
+            >×</Button> 
 
         <Button
             Style="{DynamicResource StylCyfry}"
@@ -118,8 +118,8 @@
             >6</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="5"
-            >-</Button>
+            Grid.Row="5" Click="DziałanieDwuargumentowe"
+            >-</Button> 
 
         <Button
             Style="{DynamicResource StylCyfry}"
