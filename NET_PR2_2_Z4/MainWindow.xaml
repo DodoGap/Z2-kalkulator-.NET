@@ -18,6 +18,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -31,12 +32,12 @@
         </Grid.RowDefinitions>
 
         <TextBlock
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="5"
             TextAlignment="Right"
             Text="{Binding Bufory}"
             />
         <TextBlock
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="5"
             Grid.Row="1"
             TextAlignment="Right"
             FontSize="32"
@@ -44,7 +45,8 @@
             />
 
         <Button
-            Grid.Row="2" Click="DziałanieDwuargumentowe"
+            Grid.Row="2"
+            Click="DziałanieDwuargumentowe"
             >%</Button>
         <Button
             Grid.Column="1"
@@ -58,24 +60,44 @@
             >C</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="2" Click="KasowanieZnaku"
+            Grid.Row="2"
+            Click="KasowanieZnaku"
             >⌫</Button>
+        <Button
+            Grid.Column="4"
+            Grid.Row="2"
+            Click="DziałanieJednoargumentowe"
+            >!x</Button>
 
         <Button
-            Grid.Row="3" Click="DziałanieJednoargumentowe"
+            Grid.Row="3"
+            Click="DziałanieJednoargumentowe"
             >1/x</Button>
         <Button
             Grid.Column="1"
-            Grid.Row="3" Click="DziałanieDwuargumentowe"
+            Grid.Row="3"
+            Click="DziałanieDwuargumentowe"
             >xʸ</Button>
         <Button
             Grid.Column="2"
-            Grid.Row="3" Click="DziałanieJednoargumentowe"
+            Grid.Row="3"
+            Click="DziałanieJednoargumentowe"
             >√</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="3" Click="DziałanieDwuargumentowe"
+            Grid.Row="3"
+            Click="DziałanieDwuargumentowe"
             >÷</Button>
+        <Button
+            Grid.Column="4"
+            Grid.Row="3"
+            Click="DziałanieJednoargumentowe"
+            >logₓ10</Button>
+        <Button
+            Grid.Column="4"
+            Grid.Row="6"
+            Click="DziałanieDwuargumentowe"
+            >logₓy</Button>
 
         <Button
             Style="{DynamicResource StylCyfry}"
@@ -96,8 +118,14 @@
             >9</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="4" Click="DziałanieDwuargumentowe"
+            Grid.Row="4"
+            Click="DziałanieDwuargumentowe"
             >×</Button> 
+        <Button
+            Grid.Column="4"
+            Grid.Row="4"
+            Click="DziałanieJednoargumentowe"
+            >⌈x⌉</Button>
 
         <Button
             Style="{DynamicResource StylCyfry}"
@@ -118,8 +146,14 @@
             >6</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="5" Click="DziałanieDwuargumentowe"
+            Grid.Row="5"
+            Click="DziałanieDwuargumentowe"
             >-</Button> 
+        <Button
+            Grid.Column="4"
+            Grid.Row="5"
+            Click="DziałanieJednoargumentowe"
+            >⌊x⌋</Button>
 
         <Button
             Style="{DynamicResource StylCyfry}"
@@ -140,7 +174,8 @@
             >3</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="6" Click="DziałanieDwuargumentowe"
+            Grid.Row="6"
+            Click="DziałanieDwuargumentowe"
             >+</Button>
 
         <Button
@@ -162,7 +197,9 @@
             >,</Button>
         <Button
             Grid.Column="3"
-            Grid.Row="7" Click="RównaSię"
+            Grid.Row="7"
+            Click="RównaSię"
             >=</Button>
+
     </Grid>
 </Window>

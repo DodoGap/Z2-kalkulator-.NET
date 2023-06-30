@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Numerics;
 
 namespace NET_PR2_2_Z4
 {
@@ -9,7 +10,7 @@ namespace NET_PR2_2_Z4
         private double? prawyArgument = null;
         private string? buforDziałania = null;
         private string? poprzednieDziałanie = null;
-        private string? wynik = "0";
+        private string? wynik = null;
         private bool flagaDziałania = false;
 
         public string Wynik
@@ -44,8 +45,8 @@ namespace NET_PR2_2_Z4
         internal void WprowadźCyfrę(string cyfra)
         {
             if (flagaDziałania)
-                Wynik = "0";
-            if (Wynik == "0")
+                Wynik = null;
+            if (Wynik == null)
                 Wynik = cyfra;
             else
                 Wynik += cyfra;
@@ -54,7 +55,7 @@ namespace NET_PR2_2_Z4
         internal void ZmieńZnak()
         {
             if (flagaDziałania)
-                Wynik = "0";
+                Wynik = null;
             if (Wynik == "0")
                 return;
             else if (Wynik[0] == '-')
@@ -76,21 +77,21 @@ namespace NET_PR2_2_Z4
         internal void SkasujZnak()
         {
             if (flagaDziałania)
-                Wynik = "0";
+                Wynik = null;
             if (Wynik == "0")
                 return;
             else if (
                 Wynik == "-0,"
 
             )
-                Wynik = "0";
+                Wynik = null;
             else
                 Wynik = Wynik[..^1];
         }
 
         internal void WyczyśćWynik()
         {
-            Wynik = "0";
+            Wynik = null;
         }
 
         internal void WyczyśćWszystko()
@@ -112,7 +113,7 @@ namespace NET_PR2_2_Z4
                     this,
                     new PropertyChangedEventArgs("Bufory")
                     );
-                wynik = "0";
+                wynik = null;
             }
             else if (buforDziałania == null)
             {
@@ -121,7 +122,7 @@ namespace NET_PR2_2_Z4
                     this,
                     new PropertyChangedEventArgs("Bufory")
                     );
-                wynik = "0";
+                wynik = null;
             }
             else
             {
@@ -142,13 +143,13 @@ namespace NET_PR2_2_Z4
             {
                 buforDziałania = działanie;
                 OnPropertyChanged(nameof(Bufory));
-                wynik = "0";
+                wynik = null;
             }
             else if (buforDziałania == null)
             {
                 buforDziałania = działanie;
                 OnPropertyChanged(nameof(Bufory));
-                wynik = "0";
+                wynik = null;
             }
             else
             {
@@ -158,6 +159,7 @@ namespace NET_PR2_2_Z4
                 prawyArgument = null;
             }
         }
+
 
         public void WykonajDziałanie()
         {
@@ -172,21 +174,23 @@ namespace NET_PR2_2_Z4
                 case "-":
                     Wynik = $"{lewyArgument - prawyArgument}";
                     break;
-                case "*":
+                case "×":
                     Wynik = $"{lewyArgument * prawyArgument}";
                     break;
-                case "/":
+                case "÷":
                     Wynik = $"{lewyArgument / prawyArgument}";
                     break;
-                case "^":
+                case "xʸ":
                     Wynik = $"{Math.Pow(lewyArgument.Value, prawyArgument.Value)}";
                     break;
                 case "%":
-                    Wynik = $"{lewyArgument % prawyArgument}";
-                    break;
-                case "% (procent)":
                     Wynik = $"{(lewyArgument / 100) * prawyArgument}";
                     break;
+                case "logₓy":
+                    Wynik = $"{Math.Log(lewyArgument.Value, prawyArgument.Value)}";
+                    break;
+
+
             }
             lewyArgument = double.Parse(Wynik);
             flagaDziałania = true;
@@ -201,18 +205,25 @@ namespace NET_PR2_2_Z4
                 case "1/x":
                     lewyArgument = 1 / lewyArgument;
                     break;
-                case "sqrt":
+                case "√":
                     lewyArgument = Math.Sqrt(lewyArgument.Value);
                     break;
-                case "sin":
-                    lewyArgument = Math.Sin(lewyArgument.Value);
+                case "!x":
+                    double wynikSilnia = 1;
+                    for (double i = 2; i <= lewyArgument.Value; i++)
+                        wynikSilnia *= i;
+                    lewyArgument = wynikSilnia;
                     break;
-                case "cos":
-                    lewyArgument = Math.Cos(lewyArgument.Value);
+                case "⌈x⌉":
+                    lewyArgument = Math.Ceiling(lewyArgument.Value);
                     break;
-                case "tan":
-                    lewyArgument = Math.Tan(lewyArgument.Value);
+                case "⌊x⌋":
+                    lewyArgument = Math.Floor(lewyArgument.Value);
                     break;
+                case "logₓ10":
+                    lewyArgument = Math.Log(10, lewyArgument.Value);
+                    break;
+
             }
             Wynik = $"{lewyArgument}";
             flagaDziałania = true;

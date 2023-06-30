@@ -28,9 +28,7 @@ public partial class MainWindow : Window
 
 	private void Cyfra(object sender, RoutedEventArgs e)
 	{
-		Kontroler.WprowadźCyfrę(
-			((Button)sender).Content.ToString()
-			);
+		Kontroler.WprowadźCyfrę(((Button)sender).Content.ToString());
 	}
 
 	private void Znak(object sender, RoutedEventArgs e)
@@ -60,9 +58,7 @@ public partial class MainWindow : Window
 
 	private void DziałanieDwuargumentowe(object sender, RoutedEventArgs e)
 	{
-		Kontroler.WprowadźDziałanieDwuargumentowe(
-			((Button)sender).Content.ToString()
-			);
+		Kontroler.WprowadźDziałanieDwuargumentowe(((Button)sender).Content.ToString());
 	}
 
 	private void RównaSię(object sender, RoutedEventArgs e)
@@ -72,8 +68,6 @@ public partial class MainWindow : Window
 
 	private void DziałanieJednoargumentowe(object sender, RoutedEventArgs e)
 	{
-		Kontroler.WykonajDziałanieJednoargumentowe(
-			((Button)sender).Content.ToString()
-			);
+		Kontroler.WykonajDziałanieJednoargumentowe(((Button)sender).Content.ToString());
 	}
 }
